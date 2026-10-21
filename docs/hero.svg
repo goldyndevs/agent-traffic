@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-labelledby="t d">
+  <title id="t">agent-traffic</title>
+  <desc id="d">Three coding agents drive toward one intersection; a traffic light lets one heavy build through while the others wait.</desc>
+  <style>
+    .ink{fill:#1f2328}.muted{fill:#59636e}.road{fill:#e6e9ee}.lane{stroke:#ffffff}
+    .card{fill:#ffffff;stroke:#d1d9e0}.pole{fill:#59636e}.box{fill:#24292f}
+    .off{fill:#3d444d}.green{fill:#2da44e}.amber{fill:#d29922}.red{fill:#cf222e}
+    .a{fill:#0969da}.b{fill:#8250df}.c{fill:#bf3989}.eye{fill:#ffffff}.pupil{fill:#1f2328}
+    .chip{fill:#ddf4ff;stroke:#54aeff}.chipw{fill:#fff8c5;stroke:#d4a72c}.chipr{fill:#ffebe9;stroke:#ff8182}
+    text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    @media (prefers-color-scheme:dark){
+      .ink{fill:#e6edf3}.muted{fill:#9198a1}.road{fill:#21262d}.lane{stroke:#3d444d}
+      .card{fill:#161b22;stroke:#3d444d}.pole{fill:#9198a1}.box{fill:#010409}
+      .chip{fill:#0c2d6b;stroke:#1f6feb}.chipw{fill:#3b2e00;stroke:#9e6a03}.chipr{fill:#4c1014;stroke:#da3633}
+      .pupil{fill:#0d1117}
+    }
+  </style>
+
+  <!-- title -->
+  <text x="60" y="92" class="ink" font-size="58" font-weight="800">agent-traffic</text>
+  <text x="62" y="134" class="muted" font-size="22">Traffic control for your parallel coding agents.</text>
+  <text x="62" y="166" class="muted" font-size="22">Fewer frozen laptops, duplicate servers and lost changes.</text>
+
+  <!-- road -->
+  <rect x="0" y="236" width="1200" height="96" class="road"/>
+  <line x1="0" y1="284" x2="1200" y2="284" class="lane" stroke-width="5" stroke-dasharray="34 26"/>
+
+  <!-- traffic light -->
+  <rect x="842" y="96" width="10" height="140" class="pole"/>
+  <rect x="822" y="22" width="50" height="132" rx="14" class="box"/>
+  <circle cx="847" cy="52" r="15" class="off"/>
+  <circle cx="847" cy="89" r="15" class="amber"/>
+  <circle cx="847" cy="126" r="15" class="green"/>
+
+  <!-- agent C (waiting, last) -->
+  <g transform="translate(330 248)">
+    <rect width="92" height="64" rx="16" class="c"/>
+    <circle cx="30" cy="28" r="11" class="eye"/><circle cx="62" cy="28" r="11" class="eye"/>
+    <circle cx="33" cy="30" r="5" class="pupil"/><circle cx="65" cy="30" r="5" class="pupil"/>
+    <rect x="34" y="46" width="24" height="5" rx="2.5" class="eye"/>
+  </g>
+  <g transform="translate(264 176)">
+    <rect width="214" height="44" rx="10" class="chipr" stroke-width="1.5"/>
+    <text x="14" y="28" class="ink mono" font-size="15">git checkout main ✋</text>
+  </g>
+
+  <!-- agent B (waiting, first in queue) -->
+  <g transform="translate(580 248)">
+    <rect width="92" height="64" rx="16" class="b"/>
+    <circle cx="30" cy="28" r="11" class="eye"/><circle cx="62" cy="28" r="11" class="eye"/>
+    <circle cx="34" cy="26" r="5" class="pupil"/><circle cx="66" cy="26" r="5" class="pupil"/>
+    <rect x="34" y="46" width="24" height="5" rx="2.5" class="eye"/>
+  </g>
+  <g transform="translate(530 176)">
+    <rect width="214" height="44" rx="10" class="chipw" stroke-width="1.5"/>
+    <text x="14" y="28" class="ink mono" font-size="15">flutter build ⏳ #1</text>
+  </g>
+
+  <!-- agent A (driving through) -->
+  <g transform="translate(940 248)">
+    <rect width="92" height="64" rx="16" class="a"/>
+    <circle cx="30" cy="28" r="11" class="eye"/><circle cx="62" cy="28" r="11" class="eye"/>
+    <circle cx="35" cy="28" r="5" class="pupil"/><circle cx="67" cy="28" r="5" class="pupil"/>
+    <path d="M34 46 q12 9 24 0" class="eye" stroke="#ffffff" stroke-width="4" fill="none"/>
+  </g>
+  <g transform="translate(900 176)">
+    <rect width="250" height="44" rx="10" class="chip" stroke-width="1.5"/>
+    <text x="14" y="28" class="ink mono" font-size="15">./gradlew assembleDebug ▶</text>
+  </g>
+  <!-- speed lines -->
+  <g class="muted" opacity=".6">
+    <rect x="1044" y="262" width="54" height="5" rx="2.5"/>
+    <rect x="1056" y="280" width="70" height="5" rx="2.5"/>
+    <rect x="1044" y="298" width="46" height="5" rx="2.5"/>
+  </g>
+
+  <!-- footer chips -->
+  <g font-size="15">
+    <text x="62" y="364" class="muted">🏗️ heavy-build queue · 🔌 ports · 👯 duplicates · 💥 conflicts · 🌳 shared git trees · ⏳ background</text>
+  </g>
+</svg>
