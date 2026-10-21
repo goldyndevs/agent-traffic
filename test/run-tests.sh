@@ -48,7 +48,9 @@ console.log(bad?"":"  PASS all "+(heavy.length+light.length)+" samples");process
 echo "T2 hook rewrite rules"
 reset_state
 check "light command untouched" '[ -z "$(hook_out Bash "git status")" ]'
-check "non-shell tool untouched" '[ -z "$(node -e "process.stdout.write(JSON.stringify({tool_name:\"Read\",tool_input:{file_path:\"x\"}}))" | node "$ROOT/hooks/pretooluse.js")" ]'
+# computed outside check(): nested \" inside eval differs on bash 3.2 (macOS)
+READ_OUT="$(node -e 'process.stdout.write(JSON.stringify({tool_name:"Read",tool_input:{file_path:"x"}}))' | node "$ROOT/hooks/pretooluse.js")"
+check "non-shell tool untouched" '[ -z "$READ_OUT" ]'
 G="$(gated "npm run build")"
 check "already-gated not double-gated" '[ -z "$(hook_out Bash "$G")" ]'
 check "original kept verbatim before the tail line" '[ "$(printf "%s" "$G" | tail -n2 | head -n1)" = "npm run build" ]'
