@@ -1,0 +1,12 @@
+{
+  "name": "agent-traffic",
+  "owner": { "name": "goldyndevs" },
+  "description": "agent-traffic: stop parallel coding agents from fighting over your machine (CPU, ports, duplicate commands).",
+  "plugins": [
+    {
+      "name": "agent-traffic",
+      "source": ".",
+      "description": "Queues heavy builds, stops port conflicts and duplicate dev servers, blocks duplicate commands across parallel coding agents."
+    }
+  ]
+}

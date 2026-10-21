@@ -1,0 +1,10 @@
+{
+  "name": "agent-traffic",
+  "version": "0.3.0",
+  "description": "Traffic control for parallel coding agents on one machine: queues heavy builds, stops port conflicts, duplicate and clashing commands, protects shared git working trees, and backgrounds never-ending commands.",
+  "author": { "name": "goldyndevs", "url": "https://github.com/goldyndevs" },
+  "homepage": "https://github.com/goldyndevs/agent-traffic",
+  "repository": "https://github.com/goldyndevs/agent-traffic",
+  "license": "MIT",
+  "keywords": ["parallel-agents", "build-queue", "port", "dev-server", "cpu", "coordination"]
+}
